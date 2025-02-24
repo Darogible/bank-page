@@ -38,9 +38,9 @@
 
     --default-border-radius: 5px;
 
-    --font-family-base: 'Poppins', sans-serif; /* sans-serif в качестве запасного шрифта */
+    --font-family-base: 'Poppins', sans-serif; /* sans-serif as a fallback font */
 
-    --container-padding-x: 15px; /* значение для горизонтальных внутренних отступов, чтобы при уменьшии экрана, контент не слипался с краями */
+    --container-padding-x: 15px; /* value for horizontal padding to prevent content from sticking to the edges on smaller screens */
 
     --o-transition-duration: 0.2s;
 }
@@ -68,7 +68,7 @@ html {
   
 
 header {
-    background-color: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), #42c77b);
     display: flex;
     font-family: var(--font-family-base);
     font-size: 12px;
@@ -122,11 +122,10 @@ header {
     display: block;
 }
 
-/* отредачить жестко */
 .menu {
     display: none;
     background-color: var(--secondary-color);
-    position: absolute; /* вот триггер */
+    position: absolute; 
     top: 10vw;
     right: 2vh;
     width: 30vh;
@@ -158,12 +157,13 @@ header {
 .header-log-in-button {
     font-family: var(--font-family-base);
     color: var(--secondary-color);
-    background-color: var(--primary-color);
+    background: transparent;
     border: none;
     height: 7vw;
     width: 20vw;
     align-self: center;
 }
+  
 
 .header-sign-up-button {
     font-family: var(--font-family-base);
@@ -178,12 +178,12 @@ header {
 
 
 /* main starts */
-
 .upper-main-container {
     display: flex;
     flex-direction: column;
     
     background-color: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), #42c77b);
     position: relative; 
     overflow: hidden;
     max-width: 100vw;
@@ -203,7 +203,7 @@ header {
 
 
 .hero-content {
-    position: relative; /* Добавлено, чтобы изображение можно было позиционировать относительно этого блока */
+    position: relative; /* Added to allow positioning the image relative to this block */
 }
 
 .hero-content h1 {
@@ -213,19 +213,19 @@ header {
     color: var(--secondary-color);
     margin-left: 5vw;
     z-index: 2;
-    position: relative; /* для работы с псевдоэлементом */
-    display: inline-block; /* ширина будет соответствовать содержимому */
-    margin-bottom: 20px; /* отступ для линии, чтобы она не прилипала к тексту */
+    position: relative; /* for working with the pseudo-element */
+    display: inline-block; /* width will match the content */
+    margin-bottom: 20px; /* space for the line so it doesn't stick to the text */
 }
 
 .hero-text h1::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -10px; /* отступ от текста */
-    width: 105%; /* ширина, соответствующая заголовку */
-    height: 2px; /* высота линии */
-    background-color: var(--secondary-color); /* цвет линии */
+    bottom: -10px; 
+    width: 105%; /* width matching the heading */
+    height: 2px; /* line height */
+    background-color: var(--secondary-color); 
 }
 
 
@@ -260,7 +260,7 @@ header {
 }
 
 .download-button {
-    display: inline-block; /* изначально это инлайтовый элемент, нужно изменить */
+    display: inline-block; /* originally an inline element, needs to be changed */
     background-color: var(--accent-color);
     border-radius: var(--default-border-radius);
     padding-inline: 2px;
@@ -296,9 +296,9 @@ header {
 .card {
     background-color: #EFEEB4;
     opacity: 0.8;
-    max-width: 80vw; /* Ограничиваем ширину */
-    width: fit-content; /* Чтобы карточка занимала только нужное место */
-    margin: 2vw auto; /* Центрируем */
+    max-width: 80vw; 
+    width: fit-content; /* So the card takes only the necessary space */
+    margin: 2vw auto; /* Centering */
     padding: 6vw;
     border-radius: 20px;
 }
@@ -330,7 +330,7 @@ header {
 }
 
 .learn-more-button{
-    display: inline-block; /* изначально это инлайтовый элемент, нужно изменить */
+    display: inline-block; /* originally an inline element, needs to be changed */
     background-color: #F8BF88;
     border-radius: 5px;
     padding-inline: 2px;
@@ -346,9 +346,237 @@ header {
 }
 
 .card-image img {
-    max-width: 90%; /* Чтобы изображение не было слишком большим */
+    max-width: 90%; /* To prevent the image from being too large */
     display: block;
     margin: 5vw 0 0 1vw;
+}
+
+
+/* exchange section */
+.exchange-section {
+    background: linear-gradient(to right, var(--primary-color), #42c77b);
+    font-family: var(--font-family-base);
+    color: var(--secondary-color);
+    padding-bottom: 5vw;
+}
+
+.exchange-container h2 {
+    text-align: center;
+    font-size: 1.2em;
+    padding-inline: 2vw;
+}
+
+.exchange-container p {
+    text-align: center;
+    font-size: 0.9em;
+    padding-inline: 2vw;
+}
+
+.exchange-rates img {
+    width: 4vw;
+    position: relative;
+    top: 0.5vw;
+}
+
+.exchange-rates {
+    font-size: 1.1em;
+    /* Centering the button horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering the button horizontally */
+}
+
+.buy-rate, .sell-rate {
+    font-size: 1.2em;
+    padding: 0 0 0 5vw;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid white; 
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    background: transparent;
+    width: 100%;
+}
+
+.input-group input {
+    border: none;
+    background: transparent;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: left;
+    outline: none; /* Removing the outline on focus */
+    color: white;
+}
+
+
+.currency {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+.exchange-form {
+    max-width: 60vw;
+    padding-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Centers the block horizontally */
+}
+
+.exchange-input {
+    margin: 0 5vw 0 0;
+}
+
+
+.exchange-button{
+    display: inline-block; /* Originally an inline element, needs to be changed */
+    background-color: #F8BF88;
+    border-radius: 5px;
+    padding-inline: 2px;
+    text-decoration: none;
+    color: #20656F;
+    height: 13vw;
+    width: 45vw;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 3vw auto;
+}
+
+
+.global-services-container {
+    font-family: var(--font-family-base);
+    color: #575757;
+}
+
+.global-services-container h2, .global-services-container > p {
+    text-align: center;
+}
+
+
+.service-card {
+    margin-inline: 5vw;
+    margin-block: 5vw;
+    background: var(--secondary-color); 
+    border: 1px solid rgba(#575757); 
+    border-radius: 10px;
+    padding: 5vw; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: var(--o-transition-duration);
+}
+
+.service-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: translateY(-5px); /* Lifting the card on hover */
+}
+
+
+.service-card.highlighted {
+    background: var(--primary-color);
+    color: var(--secondary-color); 
+    border: none; 
+}
+
+.service-card.highlighted h3 {
+    color: var(--secondary-color);
+}
+
+.global {
+    display: none;
+}
+
+/* footer */
+.footer-container{
+    background: linear-gradient(to right, var(--primary-color), #42c77b);
+    color: var(--secondary-color);
+}
+
+.footer-logo {
+    display: flex;
+    gap: 2vw;
+    
+}
+
+.footer-subscribe{
+    padding-inline: 5vw;
+}
+
+.privacy-text{
+    font-size: 0.7em;
+}
+
+.subscribe-form input{
+    color: #575757;
+    background: #E5E5E5;
+}
+
+.subscribe-form button{
+    background-color: var(--accent-color);
+    color: #575757;
+
+}
+
+.subscribe-form input, .subscribe-form button{
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--secondary-color);
+}
+
+.footer-column {
+    width: 40%;
+
+}
+
+.footer-links {
+    padding-inline: 5vw;
+}
+
+.footer-column h4{
+    margin-bottom: 0;
+}
+
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 3vw;
+    padding-bottom: 7vw;
 }
 
 
@@ -373,6 +601,16 @@ header {
 
     .hero-content h1 {
         left: 7vw;
+    }
+
+    /* exchange section */
+    .exchange-container h2 {
+        font-size: 1.4em;
+    }
+
+    .exchange-button{
+        height: 10vw;
+        width: 40vw;
     }
 }
 
@@ -431,13 +669,13 @@ header {
     .header-menu-link.active::after {
         content: '';
         position: absolute;
-        bottom: -5px; /* Расстояние от текста до линии */
+        bottom: -5px; 
         left: 0;
         width: 50%;
         height: 2px; 
         background-color: #DAD873; 
         transform: scaleX(1);
-        transition: transform 0.3s ease-in-out; /* Плавная анимация при появлении */
+        transition: var(--o-transition-duration); 
     }
       
     .header-menu-link:not(.active)::after {
@@ -489,7 +727,52 @@ header {
     .card ul {
         line-height: 2;
     }
-    
+
+    /* exchange section */
+    .exchange-container h2 {
+        font-size: 1.5em;
+    }
+
+    .exchange-button{
+        height: 7vw;
+        width: 30vw;
+    }
+
+    .exchange-container p {
+        padding-inline: 5vw;
+    }
+
+    .exchange-form {
+        max-width: 45vw;
+    }
+
+    .exchange-rates img {
+        width: 3vw;
+    }
+
+
+    /* footer */
+    .footer-logo h3 {
+        font-size: 1.5em;
+    }
+
+    .subscribe-agreement {
+        font-size: 1.3em;
+    }
+
+    .subscribe-form input, .subscribe-form button{
+        font-size: 1.2em;
+    }
+
+    .privacy-text {
+        font-size: 0.9em;
+        padding-right: 25vw;
+    }
+
+    .footer-links {
+        padding-inline: 10vw;
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -513,9 +796,9 @@ header {
     .hero-content {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start; /* выравниваем элементы по верхнему краю */
+        align-items: flex-start; /* Align elements to the top edge */
         padding: 5vw;
-        flex-wrap: nowrap; /* отключаем перенос элементов на новую строку */
+        flex-wrap: nowrap; /* Disable wrapping elements to a new line */
     }
 
     .hero-content h1 {
@@ -524,10 +807,10 @@ header {
     }
 
     .hero-image {
-        flex: 0.8; /* Немного уменьшаем значение flex, чтобы текст занимал больше пространства */
-        max-width: 55vw; /* Ограничиваем максимальную ширину изображения до 40% ширины контейнера */
-        align-self: center; /* Ставим по центру, чтобы уравновесить изображение с текстом */
-        max-height: 100vh; /* Уменьшаем максимальную высоту для полного соответствия */
+        flex: 0.8; /* Slightly reduce flex value so the text takes more space */
+        max-width: 55vw; 
+        align-self: center;
+        max-height: 100vh; /* Reduce max height for a better fit */
         left: 40vw;
         top: 25vw;
     }
@@ -535,7 +818,7 @@ header {
     .hero-image img {
         width: 100%;
         height: auto;
-        object-fit: contain; /* Чтобы изображение полностью помещалось в доступное пространство */
+        object-fit: contain; /* To make the image fully fit into the available space */
     }
 
     .hero-text {
@@ -584,9 +867,94 @@ header {
     .card h3 {
         font-size: 1.4em;
     }
-    
 
+    /* exchange section */
+    .exchange-container h2 {
+        text-align: left;
+        font-size: 1.6em;
+        padding: 10vw 0 0 12vw;
+        max-width: 35vw;
+    }
+
+    .exchange-container p {
+        text-align: left;
+        font-size: 1em;
+        padding: 0 0 0 12vw;
+        max-width: 40vw;
+    }
+
+    .exchange-rates{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 7vw 0 0 12vw;
+        gap: 3vw;
+    }
+
+    .exchange-form {
+        max-width: 30vw;
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        align-items: flex-end;
+        margin-left: auto;
+        margin-right: 12vw; 
+        margin-top: -20vw;
+    }
+
+    .exchange-button{
+        height: 5vw;
+        width: 17vw;
+        position: relative;
+        right: 12vw;
+        margin-top: 1vw;
+        font-size: 0.8em;
+    }
+
+    .exchange-rates img {
+        width: 2vw;
+        top: 0.2vw;
+    }
+
+    /* global services */
+    .global-services-container h2 {
+        font-size: 1.6em;
+    }
+
+    .global-services-container > p {
+        font-size: 1em;
+    }
+
+    .services-content {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr;
+        padding: 0 5vw;
+    }
+
+    .service-card {
+        padding: 3vw;
+    }
     
+    /* footer */
+    .privacy-text {
+        padding-right: 40vw;
+    }
+
+    .footer-links {
+        padding-left: 60vw;
+        position: relative;
+        bottom: 27vw;
+    }
+    
+    .footer-bottom {
+        margin-top: -10vw; /* Move up to remove empty space */
+        font-size: 1.2em;
+    }
+
+    .social-icons img {
+        width: 4vw; 
+        height: 4vw; 
+    } 
 }
 
 
@@ -633,6 +1001,69 @@ header {
         margin: 3vw 0 0 1vw;
     }
 
+
+    /* global services */
+    .global {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 20vw;
+        max-height: 20vw;
+        align-self: center; /* Center the globe vertically in the Grid */
+    }
+    
+
+    .global img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: contain; /* To make the image fully fit into the available space */
+    }
+
+    .services-content {
+        display: grid;
+        grid-template-columns: 0.5fr auto 0.5fr;
+    }
+    
+    /* Remove margin from cards that are closer to the center */
+    .services-column:first-child .service-card {
+        margin-right: 0; /* Left card closer to the center */
+    }
+
+    .services-column:last-child .service-card {
+        margin-left: 0; /* Right card closer to the center */
+    }
+
+    .service-card {
+        margin-block: 3vw;
+    }
+
+    /* footer */
+    .footer-logo h3 {
+        font-size: 2em;
+    }
+
+    .subscribe-agreement {
+        font-size: 1.5em;
+    }
+
+    .subscribe-form input, .subscribe-form button{
+        font-size: 1.4em;
+    }
+
+    .privacy-text {
+        font-size: 1em;
+    }
+
+    .footer-links {
+        padding-left: 65vw;
+        bottom: 22vw;
+    }
+
+    .social-icons img {
+        width: 3vw; 
+        height: 3vw; 
+    }
+
 }
 
 @media (min-width: 1100px) {
@@ -646,7 +1077,7 @@ header {
     }
 
     .header-log-in-button, .header-sign-up-button {
-        width: 7vw;
+        width: 8vw;
         height: 2.5vw;
         font-size: 1.5em;
     }
@@ -677,6 +1108,67 @@ header {
         margin: 0 0 0 1vw;
     }
 
+    /* exchange section */
+    .exchange-container h2 {
+        padding: 5vw 0 0 12vw;
+        font-size: 2em;
+        max-width: 30vw;
+    }
+
+    .exchange-container p {
+        font-size: 1.4em;
+        max-width: 38vw;
+    }
+
+    .exchange-rates{
+        padding: 3vw 0 0 12vw;
+        gap: 2vw;
+        font-size: 1.7em;
+    }
+
+    .exchange-form{
+        max-width: 26vw;
+        position: relative;
+        padding-top: 4vw;
+        font-size: 1.5em;
+    }
+
+    .exchange-button{
+        position: absolute;
+        height: 5vw;
+        width: 20vw;
+        margin: auto;
+        right: 5.5vw;
+        font-size: 0.9em;
+    }
+
+    .exchange-rates img {
+        width: 1.5vw;
+        top: 0.3vw;
+    }
+
+    .exchange-section {
+        padding-bottom: 12vw;
+    }
+
+    /* footer */
+    .footer-logo h3 {
+        font-size: 2em;
+    }
+
+    .subscribe-agreement {
+        font-size: 1.6em;
+    }
+
+    .subscribe-form input, .subscribe-form button{
+        font-size: 1.5em;
+    }
+
+    .footer-links {
+        padding-left: 65vw;
+        bottom: 20vw;
+    }
+
 }
 
 @media (min-width: 1400px) {
@@ -703,4 +1195,126 @@ header {
         height: 2.8vw;
         width: 7vw;
     }
+
+    
+    /* exchange section */
+    .exchange-container h2 {
+        padding: 5vw 0 0 12vw;
+        font-size: 2em;
+        max-width: 30vw;
+    }
+
+    .exchange-container p {
+        font-size: 1.4em;
+        max-width: 38vw;
+    }
+
+    .exchange-rates{
+        padding: 3vw 0 0 12vw;
+        gap: 2vw;
+    }
+
+    /* footer */
+    .footer-logo h3 {
+        font-size: 2.2em;
+    }
+
+    .subscribe-agreement {
+        font-size: 1.7em;
+    }
+
+    .subscribe-form input, .subscribe-form button{
+        font-size: 1.6em;
+    }
+
+    .footer-links {
+        bottom: 15vw;
+    }
+
+    .social-icons img {
+        width: 2vw; 
+        height: 2vw; 
+    }
+
+
+}
+
+@media (min-width: 1600px) {
+    
+    /* exchange section */
+    .exchange-container h2 {
+        font-size: 2.2em;
+    }
+
+    .exchange-container p {
+        font-size: 1.5em;
+    }
+
+    .exchange-rates{
+        gap: 1.5vw;
+        font-size: 1.7;
+    }
+
+}
+
+@media (min-width: 1920px) {
+    
+    /* exchange section */
+    .exchange-container h2 {
+        padding: 5vw 0 0 15vw;
+        font-size: 2.5em;
+    }
+
+    .exchange-container p {
+        padding: 0 0 0 15vw;
+        font-size: 2em;
+    }
+
+    .exchange-rates{
+        gap: 1.2vw;
+        padding: 4vw 0 0 20vw;
+        font-size: 2em;
+    }
+
+    .exchange-form{
+        max-width: 20vw;
+        padding-top: 8vw;
+        font-size: 1.7em;
+        bottom: 0vw;
+    }
+
+    .exchange-button{
+        height: 3.5vw;
+        width: 12vw;
+        margin: auto;
+        right: 7.5vw;
+        font-size: 0.9em;
+    }
+
+}
+
+@media (min-width: 2560px) {
+        /* exchange section */
+        .exchange-container h2 {
+            font-size: 2.8em;
+        }
+    
+        .exchange-container p {
+            font-size: 2.2em;
+        }
+    
+        .exchange-rates{
+            gap: 1vw;
+            font-size: 2.2em;
+        }
+
+        .exchange-form{
+            font-size: 2em;
+        }
+
+        .exchange-button{
+            height: 3vw;
+            width: 10vw;
+            right: 9.5vw;
+        }
 }
